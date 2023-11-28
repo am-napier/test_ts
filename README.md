@@ -2,7 +2,7 @@
 time series datagen
 
 Creates some json like this 
-
+```
 { [-]
    adjusted: 5                      # original series with faults added to it, see pattern definitions in make_series.py 
    datetime: 2023-11-28 22:40:46    # a timestamp
@@ -17,7 +17,7 @@ Creates some json like this
    raw: 5                           # raw unadjusted value based on the initial factor set 
    regular: 5                       # same as raw, don't know why there are two
 }
-
+```
 Please read the bin/make_series.py for more details and when you work out what I did feel free to write some docs ;)  
 Otherwise its on my todo list ... near the bottom ;) 
 soz!
