@@ -1,0 +1,7 @@
+#
+# ./default.meta
+#
+
+[]
+access = read: [ * ], write: [ *], delete: [ * ]
+export = system

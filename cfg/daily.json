@@ -1,0 +1,65 @@
+{
+    "daily": {
+        "Description": [
+            "every day has different loading so no weekly pattern"
+        ],
+        "factorSet": "DAY_FACTORS_288",
+        "max": 25,
+        "min": 5,
+        "noise": {
+            "type": "factor",
+            "value": "0.01,0.1,0.25,0.5,1,2,5"
+        },
+        "patterns": [
+            {
+                "active": -133,
+                "days": "0,1,2,3,4,5,6",
+                "desc": "small random noise every day all day, 2% probability, 10-50% increase in value",
+                "duration": {
+                    "max": 3,
+                    "min": 1
+                },
+                "factor": {
+                    "high": 0.5,
+                    "low": 0.1,
+                    "type": "factor"
+                },
+                "probability": 0.02,
+                "times": [
+                    {
+                        "end": "23:25",
+                        "start": "00:00"
+                    }
+                ],
+                "type": "random"
+            },
+            {
+                "active": 0,
+                "days": "0,1,2,3,4,5,6",
+                "desc": "4am to 8pm every day, 1% 0.1-1.5x",
+                "duration": {
+                    "max": 3,
+                    "min": 1
+                },
+                "factor": {
+                    "high": 1.5,
+                    "low": 0.1,
+                    "type": "factor"
+                },
+                "probability": 0.01,
+                "times": [
+                    {
+                        "end": "20:25",
+                        "start": "04:00"
+                    }
+                ],
+                "type": "random"
+            }
+        ],
+        "periodicity": {
+            "span": 30,
+            "variance": 0.05
+        },
+        "weekdays": "0.75,0.6,0.35,0.67,0.81,0.19,0.1"
+    }
+}
