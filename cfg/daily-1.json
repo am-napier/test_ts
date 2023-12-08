@@ -1,0 +1,31 @@
+{
+    "Description": [
+        "All days are the same"
+    ],
+    "factorSet": "DAILY_WORK_HOURS",
+    "max": 10000,
+    "min": 0,
+    "weekdays": "1,1,1,1,1,1,1",
+    "noise": {"type":"factor","value":"0.01,0.1,0.25,0.5,1,2,5"},
+    "periodicity": {"span":30},
+    "patterns": {
+        "background-noise":{
+            "days": "0,1,2,3,4,5,6",
+            "desc": "small random noise every day all day, 2% probability, 10-50% increase in value",
+            "duration": { "max": 10, "min": 1 },
+            "factor": { "low": 0.4, "high": 0.5, "type": "factor" },
+            "probability": 0.02,
+            "times": [{"start":"00:00","end":"23:25"}],
+            "type": "random"
+        },
+        "randomness":{
+            "desc": "11am to 12pm every day",
+            "days": "0,1,2,3,4,5,6",
+            "probability": 0.01,
+            "type": "random",
+            "duration": {"max":50,"min":5},
+            "factor": {"high":1.0,"low":1.0,"type":"factor"},
+            "times": [{"start":"11:00","end":"12:00"}]
+        }
+    }
+}

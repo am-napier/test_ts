@@ -1,0 +1,40 @@
+{
+    "Description": [
+        "Ramps up to a high on Friday, weekends are low, base background noise plus some mid weekday activity"
+    ],
+    "factorSet": "DAY_FACTORS_288",
+    "max": 25,
+    "min": 5,
+    "weekdays": "0.8,0.81,0.83,0.85,0.95,0.1,0.1",
+    "noise": {"type":"factor","value":"0.01,0.1,0.25,0.5,1,2,5"},
+    "periodicity": {"span":30,"variance":0.05},
+    "patterns": {
+        "background-noise":{
+            "days": "0,1,2,3,4,5,6",
+            "desc": "small random noise every day all day, 2% probability, 10-50% increase in value",
+            "duration": { "max": 10, "min": 1 },
+            "factor": { "low": 0.4, "high": 0.5, "type": "factor" },
+            "probability": 0.02,
+            "times": [{"start":"00:00","end":"23:25"}],
+            "type": "random"
+        },
+        "friday-login":{
+            "desc": "7:30am to 9am big spike",
+            "days": "4",
+            "probability": 0.1,
+            "type": "random",
+            "duration": {"max":20,"min":10},
+            "factor": {"high":1.5,"low":1.1,"type":"factor"},
+            "times": [{"start":"07:30","end":"09:00"}]
+        },
+        "user-noise":{
+            "desc": "10am to 4pm every weekday, 1% 0.1-1.5x",
+            "days": "0,1,2,3,4",
+            "probability": 0.01,
+            "type": "random",
+            "duration": {"max":3,"min":1},
+            "factor": {"high":1.5,"low":0.1,"type":"factor"},
+            "times": [{"start":"10:00","end":"16:00"}]
+        }
+    }
+}

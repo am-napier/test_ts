@@ -1,0 +1,52 @@
+[savedsearches/Manual_Delete_me]
+access = read : [ * ], write : [ itoa_admin ]
+export = system
+owner = admin
+version = 9.1.0.2
+modtime = 1701264140.985944000
+
+[props/metrics_csv_custom]
+owner = admin
+version = 9.1.0.2
+modtime = 1701448980.157152000
+
+[inputs/monitor%3A%2F%2F%2Ftmp%2Ffoo.csv]
+owner = admin
+version = 9.1.0.2
+modtime = 1701449016.307005000
+
+[transforms/metric-schema%3Ats_metrics_1702025807806]
+owner = admin
+version = 9.1.0.2
+modtime = 1702025807.979262000
+
+[props/ts_metrics]
+owner = admin
+version = 9.1.0.2
+modtime = 1702025810.210372000
+
+[inputs/script%3A%2F%2F%24SPLUNK_HOME%2Fetc%2Fapps%2Ftest_ts%2Fbin%2Fmake_series.py%20-n%2060%20ptn-3.json%20weekday-3]
+owner = admin
+version = 9.1.0.2
+modtime = 1702036167.214221000
+
+[indexes/ts_metrics]
+owner = admin
+version = 9.1.0.2
+modtime = 1702049329.883370000
+
+[inputs/script%3A%2F%2F%24SPLUNK_HOME%2Fetc%2Fapps%2Ftest_ts%2Fbin%2Fmake_series.py%20-n%2060%20daily-1.json%20daily-1]
+version = 9.1.0.2
+modtime = 1702050013.131624000
+
+[inputs/script%3A%2F%2F%24SPLUNK_HOME%2Fetc%2Fapps%2Ftest_ts%2Fbin%2Fmake_series.py%20-n%2060%20weekday-1.json%20weekday-1]
+version = 9.1.0.2
+modtime = 1702050156.452404000
+
+[inputs/script%3A%2F%2F%24SPLUNK_HOME%2Fetc%2Fapps%2Ftest_ts%2Fbin%2Fmake_series.py%20-n%2060%20weekday-2.json%20weekday-2]
+version = 9.1.0.2
+modtime = 1702050010.294169000
+
+[inputs/script%3A%2F%2F%24SPLUNK_HOME%2Fetc%2Fapps%2Ftest_ts%2Fbin%2Fmake_series.py%20-n%2060%20weekday-3.json%20weekday-3]
+version = 9.1.0.2
+modtime = 1702049412.831870000

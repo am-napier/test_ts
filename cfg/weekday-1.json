@@ -1,0 +1,83 @@
+{
+    "Description": [
+        "weekdays are similar but weekends are different, sat is high sunday is low, backup jobs run sunday at 3am for random 10-90 mins"
+    ],
+    "factorSet": "DAY_FACTORS_288",
+    "max": 25,
+    "min": 5,
+    "weekdays": "0.75,0.73,0.71,0.69,0.79,0.19,0.05",
+    "noise": {
+        "type": "factor",
+        "value": "0.01,0.1,0.25,0.5,1,2,5"
+    },
+    "periodicity": {
+        "span": 30,
+        "variance": 0.05
+    },
+    "patterns": {
+        "background-noise":{
+                        "active": -74,
+            "days": "0,1,2,3,4,5,6",
+            "desc": "small random noise every day all day, 2% probability, 10-50% increase in value",
+            "duration": {
+                "max": 3,
+                "min": 1
+            },
+            "factor": {
+                "high": 0.5,
+                "low": 0.1,
+                "type": "factor"
+            },
+            "probability": 0.02,
+            "times": [
+                {
+                    "start": "00:00",
+                    "end": "23:25"
+                }
+            ],
+            "type": "random"
+        },
+        "user-noise":{
+            "desc": "4am to 8pm every day, 1% 0.1-1.5x",
+            "days": "0,1,2,3,4,5,6",
+            "probability": 0.01,
+            "type": "random",
+            "duration": {
+                "max": 3,
+                "min": 1
+            },
+            "factor": {
+                "high": 1.5,
+                "low": 0.1,
+                "type": "factor"
+            },
+            "times": [
+                {
+                    "start": "04:00",
+                    "end": "20:25"
+                }
+            ]
+        },
+        "sunday-backup":{
+            "days": "5",
+            "desc": "3am for 90 mins on sunday 10x spike that lasts for between 20 and 180 cycles",
+            "probability": 0.1,
+            "type": "random",
+            "duration": {
+                "max": 180,
+                "min": 20
+            },
+            "factor": {
+                "high": 15,
+                "low": 10,
+                "type": "factor"
+            },
+            "times": [
+                {
+                    "end": "04:35",
+                    "start": "03:00"
+                }
+            ]
+        }
+    }
+}
